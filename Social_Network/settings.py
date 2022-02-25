@@ -86,9 +86,9 @@ DATABASES = {
         'NAME': 'd4ctbq5jj1q4rd',
         'HOST': 'ec2-34-236-87-247.compute-1.amazonaws.com',
         'USER': 'ueimyizacazdya',
-        'PASSWORD' : '26e2b492ad9a0a75786aed93a1278c59ada6c7d64134757dbfdc01fe3883dcd9',
+        'PASSWORD': '26e2b492ad9a0a75786aed93a1278c59ada6c7d64134757dbfdc01fe3883dcd9',
         'PORT': 5432,
-'
+
     }
 }
 
@@ -129,6 +129,10 @@ NULL = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 APPEND_SLASH=False
