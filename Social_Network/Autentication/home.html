@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Compara Esta</title>
+    <style>
+        body {
+            background-image: url('https://images.ctfassets.net/hrltx12pl8hq/6QpKgim9qMgGK8QG2a6gaC/2de28b955c0cf902004fecd1a1e62bee/sub-category-1.jpg?fit=fill&w=368&h=207');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        footer {
+            background-color: black;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 20%;
+            color: white;
+
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    {% for message in messages %}
+    <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+    <strong> Message: </strong> {{message}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+    </button>
+    </div>
+    {% endfor %}
+
+    {% if user.is_authenticated %}
+    <!-- <h3> Hello!! </h3>
+    <h4> You are succesfully logged in </h4>
+    <h2> Welcome {{user.first_name}} </h2>-->
+
+
+
+    <!-- Input de que elemento se quiere buscar la informacion -->
+    <form action="/try/" method="post">
+        {% csrf_token %}
+
+        {% for key,value in final_dict.items %}
+            <div class="sg-col-4-of-12 s-result-item s-asin sg-col-4-of-16 AdHolder sg-col s-widget-spacing-small sg-col-4-of-20" data-asin="B07TTJR48G" data-index="1" data-uuid="ad272963-2afb-4a53-bdd9-d4ebb0b33d9e" data-height="100px">
+
+                <span class="a-size-base-plus a-color-base a-text-normal">
+                    {{key}} <h2> Precio: {{value}}</h2>
+
+                    <img src={{image}} width="150px" >
+
+                </span>
+            </div>
+
+         {% endfor %}
+
+
+
+        {% for key,value in ebay_final_dict.items %}
+            <div class="sg-col-4-of-12 s-result-item s-asin sg-col-4-of-16 AdHolder sg-col s-widget-spacing-small sg-col-4-of-20" data-asin="B07TTJR48G" data-index="1" data-uuid="ad272963-2afb-4a53-bdd9-d4ebb0b33d9e">
+
+                <span class="a-size-base-plus a-color-base a-text-normal">
+                    {{key}} <h2> Precio: {{value}}</h2>
+                </span>
+        {% endfor %}
+
+        </div>
+        <div style="text-align:center">
+            <font size=7 color="green">COMPARA!!!</font>
+        </div>
+        <div style="text-align:center">
+        <label for="">Search</label>
+        <input type="text" size="100px" id="element" name="element" placeholder="Write the element you want to compare" required>
+        <br>
+        <span class="a-size-base-plus a-color-base a-text-normal">
+            {{ctx}}
+        </span>
+        </div>
+
+
+    </form>
+
+    <div style="text-align:right">
+    <button type="submit" style="width:120px; height:50px"> <a href="/signout/">SignOut</a></button>
+    {% else %}
+    <button type='submit'> <a href="/signup"> SignUp </a> </button>
+    <button type='submit'> <a href="/signin/"> SignIn </a> </button>
+    </div>
+    {% endif %}
+    <div style="text-align:center">
+            <font size=6 color="red">FASE BETA / BETA PHASE</font>
+    </div>
+    <div style="text-align:center">
+            <font size=6 color="blue">By Aitortxu</font>
+    </div>
+
+</div>
+</body>
+<footer>
+    <div style="text-align:center">
+        <h1> Redes Soliales / Social Media </h1>
+        <h2> Instagram: @aitortxu_pk </h2>
+        <h2> GitHub: aitortxu20 </h2>
+    </div>
+</footer>
+</html>
