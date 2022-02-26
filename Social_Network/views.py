@@ -10,8 +10,7 @@ import os
 
 def home(request):
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    template = open(os.path.join(BASE_DIR, 'Autentication/home.html'))
-    return render(request, template)
+    return render(request, os.path.join(BASE_DIR, '/Social_Network/Autentication/home.html'))
 
 def get_element(request):
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
