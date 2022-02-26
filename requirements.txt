@@ -6,3 +6,4 @@ whitenoise==6.0.0
 psycopg2==2.8.6
 bs4==0.0.1
 requests==2.25.1
+django-heroku==0.3.1
