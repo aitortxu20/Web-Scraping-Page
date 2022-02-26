@@ -1,2 +1,2 @@
-web: gunicorn manage:manage
+web: gunicorn Social_Network:Social_Network
 
