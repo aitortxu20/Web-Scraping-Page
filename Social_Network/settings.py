@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 import os
 import dj_database_url
 from decouple import config
-import psycopg2
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -84,11 +84,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'd4ctbq5jj1q4rd',
-        'USER': 'ueimyizacazdya',
-        'PASSWORD': '26e2b492ad9a0a75786aed93a1278c59ada6c7d64134757dbfdc01fe3883dcd9',
-        'HOST': 'ec2-34-236-87-247.compute-1.amazonaws.com',
-        'PORT': 5432,
-
+        
     }
 
     }
