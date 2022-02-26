@@ -1,2 +1,2 @@
-web: gunicorn scraping:scraping
+web: gunicorn manage:manage
 
