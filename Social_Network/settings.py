@@ -58,7 +58,7 @@ ROOT_URLCONF = 'Social_Network.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'Autentication/')],
+        'DIRS': [os.path.join(BASE_DIR,'templates')],
 
 
 
