@@ -5,10 +5,12 @@ from django.http import HttpResponse
 from django.template import Template, Context
 from django.shortcuts import render, redirect
 from django.contrib import messages
+import os
 
 #HEADERS = {'User-Agent':'Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0'}
 
 def amazon(request,element):
+    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     global html_codes
     HEADERS = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36' }
     amazon_content = {}
@@ -100,14 +102,14 @@ def amazon(request,element):
         title_string = 'NA'
         print('product Title = ', title_string)
         return render(request,
-                      '/home/kali/Desktop/Scripts/Django/Social_Network/Social_Network/Autentication/home.html')
+                      os.path.join(BASE_DIR, 'Autentication/home.html'))
 
-    return dict_amazon,url,tags,html_codes,render(request, '/home/kali/Desktop/Scripts/Django/Social_Network/Social_Network/Autentication/home.html')
+    return dict_amazon,url,tags,html_codes,render(request, os.path.join(BASE_DIR, 'Autentication/home.html'))
     #return t.render(ctx)
 
 
 def ebay(request,element):
-
+    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     HEADERS = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36'}
     url = 'https://www.ebay.es/sch/i.html?_from=R40&_trksid=p2380057.m570.l1313&_nkw='+element+'&_sacat=0'
     webpage2 = requests.get(url, headers=HEADERS)
@@ -189,9 +191,9 @@ def ebay(request,element):
         title_string = 'NA'
         print('product Title = ', title_string)
         return render(request,
-                      '/home/kali/Desktop/Scripts/Django/Social_Network/Social_Network/scraper.html')
+                      os.path.join(BASE_DIR, 'Autentication/scraper.html'))
     return dict_ebay,render(request,
-              '/home/kali/Desktop/Scripts/Django/Social_Network/Social_Network/scraper.html')
+              os.path.join(BASE_DIR, 'Autentication/scraper.html'))
 
 
 

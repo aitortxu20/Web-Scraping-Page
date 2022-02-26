@@ -22,10 +22,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!đ
-SECRET_KEY = 'qpy5ugflc))j%3da_20lyxayi7mli(==^ingtm+s1s-icyz#oh'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -57,11 +57,9 @@ ROOT_URLCONF = 'Social_Network.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['/home/kali/Desktop/Scripts/Django/Social_Network/Social_Network/Autentication/home.html',
-                 '/home/kali/Desktop/Scripts/Django/Social_Network/Social_Network/Autentication/sign_up.html',
-                 '/home/kali/Desktop/Scripts/Django/Social_Network/Social_Network/Autentication/sign_in.html',
-                 '/home/kali/Desktop/Scripts/Django/Social_Network/Social_Network/Autentication/sign_out.html',
-                 '/home/kali/Desktop/Scripts/Django/Social_Network/Social_Network/scraper.html'],
+        'DIRS': [os.path.join(BASE_DIR, 'Autentication/home.html','Autentication/sign_up.html',
+                              'Autentication/sign_in.html','Autentication/sign_out.html',
+                              'Autentication/scraper.html')],
 
 
 
@@ -137,4 +135,4 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
-STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
