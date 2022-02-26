@@ -25,6 +25,8 @@ from django.template import Template, Context
 from django.shortcuts import render, redirect
 from django.views.generic import RedirectView
 from django.conf.urls import url
+from django.conf import settings
+from django.conf.urls.static import static
 
 #from Social_Network.scripting import
 
@@ -37,4 +39,4 @@ urlpatterns = [
     path('try/', comparacion),
     url(r'^favicon\.ico$', RedirectView.as_view(url='/static/images/favicon.ico')),
 
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
