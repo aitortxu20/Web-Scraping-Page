@@ -81,15 +81,7 @@ WSGI_APPLICATION = 'Social_Network.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd4ctbq5jj1q4rd',
-        'USER': 'ueimyizacazdya',
-        'PASSWORD': '26e2b492ad9a0a75786aed93a1278c59ada6c7d64134757dbfdc01fe3883dcd9',
-        'HOST': 'ec2-34-236-87-247.compute-1.amazonaws.com',
-        'PORT': 5432,
-
-    }
+    'default': dj_database_url.config()
 
     }
 
