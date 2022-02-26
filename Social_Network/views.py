@@ -10,7 +10,7 @@ import os
 
 def home(request):
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    return render(request, '/app/.heroku/Social_Network/Autentication/home.html')
+    return render(request, '/app/Social_Network/Autentication/home.html')
 
 def get_element(request):
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
