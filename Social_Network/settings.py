@@ -13,6 +13,10 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 import os
 import django_heroku
 django_heroku.settings(locals())
+MIDDLEWARE_CLASSES = (
+    # Simplified static file serving.
+    # https://warehouse.python.org/project/whitenoise/
+    'whitenoise.middleware.WhiteNoiseMiddleware',)
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
