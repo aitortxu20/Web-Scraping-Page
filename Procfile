@@ -1,2 +1,2 @@
-web: gunicorn Social_Network:Social_Network
+web: gunicorn app:Social_Network
 
