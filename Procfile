@@ -1,2 +1,2 @@
-web: gunicorn wsgi:wsgi
+web: gunicorn scraping:scraping
 
