@@ -1,6 +1,0 @@
-Python==2.7.18
-Django==3.2
-djangorestframework
-psycopg2=2.8.4
-bs4
-requests
