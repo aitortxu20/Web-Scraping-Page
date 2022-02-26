@@ -1,2 +1,2 @@
-web: gunicorn Social_Network.wsgi
+web: gunicorn Social_Network.wsgi:$PORT
 
