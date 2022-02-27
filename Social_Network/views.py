@@ -10,7 +10,7 @@ import os
 
 def home(request):
     base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    return render(request, os.path.join(base_dir,'Autentication/home.html'))
+    return render(request, '/app/Social_Network/Autentication/home.html')
 
 def get_element(request):
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
