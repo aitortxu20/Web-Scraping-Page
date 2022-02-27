@@ -9,8 +9,8 @@ from Social_Network.scraping import amazon , ebay
 import os
 
 def home(request):
-    #BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    return render(request, "Autentication/home.html")
+    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    return render(request, os.path.join(base_dir,'Autentication/home.html'))
 
 def get_element(request):
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
