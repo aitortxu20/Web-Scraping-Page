@@ -10,14 +10,14 @@ import os
 
 def home(request):
     #BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    return render(request, "home.html")
+    return render(request, "Autentication/home.html")
 
 def get_element(request):
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     if request.method == 'POST':
         element = request.POST['element']
     return element
-    return render(request, os.path.join(BASE_DIR, 'home.html'))
+    return render(request, os.path.join(BASE_DIR, 'Autentication/home.html'))
 
 def sign_up(request):
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -54,7 +54,7 @@ def sign_in(request):
         if user is not None:
             login(request, user)
             fname = user.first_name
-            return render(request, os.path.join(BASE_DIR, 'home.html'), {'fname':fname})
+            return render(request, os.path.join(BASE_DIR, 'Autentication/home.html'), {'fname':fname})
 
         else:
             messages.error(request, 'Bad Credentials')
