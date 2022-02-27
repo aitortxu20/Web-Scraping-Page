@@ -17,7 +17,7 @@ def get_element(request):
     if request.method == 'POST':
         element = request.POST['element']
     return element
-    return render(request, os.path.join(BASE_DIR, 'Autentication/home.html'))
+    return render(request, '/app/Social_Network/Autentication/home.html')
 
 def sign_up(request):
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -40,7 +40,7 @@ def sign_up(request):
 
         return redirect('signin/')
 
-    return render(request, os.path.join(BASE_DIR, 'Autentication/sign_up.html'))
+    return render(request, '/app/Social_Network/Autentication/sign_up')
 
 
 def sign_in(request):
@@ -54,13 +54,13 @@ def sign_in(request):
         if user is not None:
             login(request, user)
             fname = user.first_name
-            return render(request, os.path.join(BASE_DIR, 'Autentication/home.html'), {'fname':fname})
+            return render(request, '/app/Social_Network/Autentication/home.html', {'fname':fname})
 
         else:
             messages.error(request, 'Bad Credentials')
             return redirect('/home/')
 
-    return render(request, os.path.join(BASE_DIR, 'Autentication/sign_in.html'))
+    return render(request, '/app/Social_Network/Autentication/sign_in.html')
 
 
 def sign_out(request):
@@ -68,7 +68,7 @@ def sign_out(request):
     logout(request)
     messages.success(request, 'Logged Out Succesfully!')
     return redirect('/home/')
-    return render(request, os.path.join(BASE_DIR, 'Autentication/sign_out.html'))
+    return render(request, '/app/Social_Network/Autentication/sign_out.html')
 
 def comparacion(request):
     messages.success(request,request.method)

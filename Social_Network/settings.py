@@ -58,7 +58,11 @@ ROOT_URLCONF = 'Social_Network.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'Autentication'),'/app/Social_Network/Autentication/home.html',],
+        'DIRS': [os.path.join(BASE_DIR,'Autentication'),'/app/Social_Network/Autentication/home.html',
+                 '/app/Social_Network/Autentication/sign_in.html',
+                 '/app/Social_Network/Autentication/sign_up.html',
+                 '/app/Social_Network/Autentication/sign_out.html',
+                 '/app/Social_Network/Autentication/scraper.html',],
 
 
 

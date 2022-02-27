@@ -102,9 +102,9 @@ def amazon(request,element):
         title_string = 'NA'
         print('product Title = ', title_string)
         return render(request,
-                      os.path.join(BASE_DIR, 'Autentication/home.html'))
+                      '/app/Social_Network/Autentication/home.html')
 
-    return dict_amazon,url,tags,html_codes,render(request, os.path.join(BASE_DIR, 'Autentication/home.html'))
+    return dict_amazon,url,tags,html_codes,render(request, '/app/Social_Network/Autentication/home.html')
     #return t.render(ctx)
 
 
@@ -191,9 +191,9 @@ def ebay(request,element):
         title_string = 'NA'
         print('product Title = ', title_string)
         return render(request,
-                      os.path.join(BASE_DIR, 'Autentication/scraper.html'))
+                      '/app/Social_Network/Autentication/scraper.html')
     return dict_ebay,render(request,
-              os.path.join(BASE_DIR, 'Autentication/scraper.html'))
+              '/app/Social_Network/Autentication/scraper.html')
 
 
 
