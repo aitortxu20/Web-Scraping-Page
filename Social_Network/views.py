@@ -40,7 +40,7 @@ def sign_up(request):
 
         return redirect('signin/')
 
-    return render(request, '/app/Social_Network/Autentication/sign_up')
+    return render(request, '/app/Social_Network/Autentication/sign_up.html')
 
 
 def sign_in(request):
