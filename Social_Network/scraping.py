@@ -198,8 +198,8 @@ def ebay(request,element):
         print('product Title = ', title_string)
         return render(request,
                       '/app/Social_Network/Autentication/scraper.html')
-    return dict_ebay,render(request,
-              '/app/Social_Network/Autentication/scraper.html')
+    return html_codes,render(request,
+              '/app/Social_Network/Autentication/home.html')
 
 
 

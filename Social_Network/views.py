@@ -76,16 +76,17 @@ def comparacion(request):
         element = request.POST['element']
         #Amazon
 
-        amazon(request,element)
+        #amazon(request,element)
         ebay(request, element)
+        codes, rend = ebay(request,element)
         url_list = []
-        dic,url,image_tag,codes, rend = amazon(request,element)
-        keys = []
+        #dic,url,image_tag,codes, rend = amazon(request,element)
+        '''keys = []
         values = []
         for k,v in dic.items():
             keys.append(k)
             values.append(v)
-        final_dict = dict(zip(keys,values))
+        final_dict = dict(zip(keys,values))'''
         #Ebay
 
         '''dic_ebay, rende = ebay(request,element)
