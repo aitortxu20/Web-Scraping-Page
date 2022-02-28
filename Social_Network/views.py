@@ -78,7 +78,7 @@ def comparacion(request):
         amazon(request,element)
         url_list = []
         dic,url,image_tag,codes, rend = amazon(request,element)
-        keys = []
+        '''keys = []
         values = []
         for k,v in dic.items():
             keys.append(k)
@@ -93,7 +93,7 @@ def comparacion(request):
             ebay_keys.append(k)
             ebay_values.append(v)
 
-        ebay_final_dict = dict(zip(ebay_keys, ebay_values))
+        ebay_final_dict = dict(zip(ebay_keys, ebay_values))'''
 
     return HttpResponse(codes)
 
