@@ -96,6 +96,7 @@ def amazon(request,element):
             </html>
                                         
             """.format(amazon_titles[elemento],amazon_prices[elemento],tags[elemento],url)
+
             html_codes.append(doc)
             html_codes.append('\n')
 
@@ -128,6 +129,18 @@ def ebay(request,element):
     contador_ebay = 0
     count_image = 0
     count_button = 0
+    html_codes = ["""<head>
+                    <meta charset="UTF-8">
+                    <title>Compara Esta</title>
+                    <style>
+                        body {
+                            background-image: url('https://visme.co/blog/wp-content/uploads/2017/07/50-Beautiful-and-Minimalist-Presentation-Backgrounds-036.jpg');
+                            background-repeat: no-repeat;
+                            background-attachment: fixed;
+                            background-size: cover;
+                        }
+                    </style>
+                </head>""", ]
 
     try:
         title_ebay = soup2.find_all('h3',
