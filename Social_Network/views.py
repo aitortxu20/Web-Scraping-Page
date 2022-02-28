@@ -75,13 +75,13 @@ def comparacion(request):
     if request.method == 'POST':
         element = request.POST['element']
         #Amazon
-        '''amazon(request,element)
+        amazon(request,element)
         url_list = []
-        dic,url,image_tag,codes, rend = amazon(request,element)'''
+        codes, rend = amazon(request,element)
 
-        #Ebay
+        '''#Ebay
         ebay(request,element)
-        codes, rende = ebay(request,element)
+        dic_ebay, rende = ebay(request,element)'''
 
 
     return HttpResponse(codes)

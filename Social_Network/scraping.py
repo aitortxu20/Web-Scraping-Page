@@ -109,7 +109,7 @@ def amazon(request,element):
         return render(request,
                       '/app/Social_Network/Autentication/home.html')
 
-    return dict_amazon,url,tags,html_codes,render(request, '/app/Social_Network/Autentication/home.html')
+    return html_codes,render(request, '/app/Social_Network/Autentication/home.html')
     #return t.render(ctx)
 
 
