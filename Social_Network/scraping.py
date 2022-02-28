@@ -20,6 +20,19 @@ html_codes = ["""<head>
                         }
                     </style>
                 </head>""", ]
+if len(html_codes) == 4:
+    html_codes = ["""<head>
+                        <meta charset="UTF-8">
+                        <title>Compara Esta</title>
+                        <style>
+                            body {
+                                background-image: url('https://visme.co/blog/wp-content/uploads/2017/07/50-Beautiful-and-Minimalist-Presentation-Backgrounds-036.jpg');
+                                background-repeat: no-repeat;
+                                background-attachment: fixed;
+                                background-size: cover;
+                            }
+                        </style>
+                    </head>""", ]
 
 
 def amazon(element,html_codes):
