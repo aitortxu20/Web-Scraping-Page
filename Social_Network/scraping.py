@@ -186,7 +186,7 @@ def ebay(element):
 
 
 def return_value(element):
-    #amazon(element)
-    ebay(element)
+    amazon(element)
+    #ebay(element)
     return html_codes
 
