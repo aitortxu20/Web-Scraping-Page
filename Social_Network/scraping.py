@@ -202,7 +202,7 @@ def ebay(element, html_codes):
          #             '/app/Social_Network/Autentication/home.html')
     #return html_codes,render(request,
      #         '/app/Social_Network/Autentication/home.html')
-    return html_codes
+    
 
 
 
