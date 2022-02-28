@@ -76,27 +76,26 @@ def comparacion(request):
     if request.method == 'POST':
         element = request.POST['element']
         #Amazon
-        amazon(element,html_codes)
+        #amazon(request,element)
         url_list = []
-        if len(html_codes) < 4:
-            amazon(element,html_codes)
-            #ebay(element,html_codes)
-            #ebay(element)
-            #codes = amazon(element)
-            codes = html_codes
-        else:
-            html_codes = ["""<head>
-                    <meta charset="UTF-8">
-                    <title>Compara Esta</title>
-                    <style>
-                        body {
-                            background-image: url('https://visme.co/blog/wp-content/uploads/2017/07/50-Beautiful-and-Minimalist-Presentation-Backgrounds-036.jpg');
-                            background-repeat: no-repeat;
-                            background-attachment: fixed;
-                            background-size: cover;
-                        }
-                    </style>
-                </head>""",]
+        amazon(element,html_codes)
+        #ebay(element,html_codes)
+        #ebay(element)
+        #codes = amazon(element)
+        codes = html_codes
+        if len(codes) > 3:
+            codes = ["""<head>
+                                <meta charset="UTF-8">
+                                <title>Compara Esta</title>
+                                <style>
+                                    body {
+                                        background-image: url('https://visme.co/blog/wp-content/uploads/2017/07/50-Beautiful-and-Minimalist-Presentation-Backgrounds-036.jpg');
+                                        background-repeat: no-repeat;
+                                        background-attachment: fixed;
+                                        background-size: cover;
+                                    }
+                                </style>
+                            </head>""", ]
 
     return HttpResponse(codes)
 

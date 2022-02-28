@@ -8,7 +8,7 @@ from django.contrib import messages
 import os
 
 #HEADERS = {'User-Agent':'Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0'}
-home_background = """<head>
+html_codes = ["""<head>
                     <meta charset="UTF-8">
                     <title>Compara Esta</title>
                     <style>
@@ -19,8 +19,7 @@ home_background = """<head>
                             background-size: cover;
                         }
                     </style>
-                </head>"""
-html_codes = [home_background,]
+                </head>""", ]
 
 
 
