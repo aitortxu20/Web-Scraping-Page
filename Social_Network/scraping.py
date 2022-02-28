@@ -9,7 +9,7 @@ import os
 
 #HEADERS = {'User-Agent':'Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0'}
 
-def amazon(request,element):
+def amazon(element):
 
     global html_codes
     HEADERS = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36 Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36 ' } #We use headers to see that the request for Amazon has been made by an human.
@@ -107,14 +107,15 @@ def amazon(request,element):
     except AttributeError:
         title_string = 'NA'
         print('product Title = ', title_string)
-        return render(request,
-                      '/app/Social_Network/Autentication/home.html')
+        #return render(request,
+         #             '/app/Social_Network/Autentication/home.html')
 
-    return html_codes,render(request, '/app/Social_Network/Autentication/home.html')
+    #return html_codes,render(request, '/app/Social_Network/Autentication/home.html')
     #return t.render(ctx)
+    return html_codes
 
 
-def ebay(request,element):
+def ebay(element):
 
     #This function is the same we do for amazon but now for ebay.
     HEADERS = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36 Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36 '}
@@ -129,18 +130,6 @@ def ebay(request,element):
     contador_ebay = 0
     count_image = 0
     count_button = 0
-    html_codes = ["""<head>
-                    <meta charset="UTF-8">
-                    <title>Compara Esta</title>
-                    <style>
-                        body {
-                            background-image: url('https://visme.co/blog/wp-content/uploads/2017/07/50-Beautiful-and-Minimalist-Presentation-Backgrounds-036.jpg');
-                            background-repeat: no-repeat;
-                            background-attachment: fixed;
-                            background-size: cover;
-                        }
-                    </style>
-                </head>""", ]
 
     try:
         title_ebay = soup2.find_all('h3',
@@ -209,10 +198,10 @@ def ebay(request,element):
     except AttributeError:
         title_string = 'NA'
         print('product Title = ', title_string)
-        return render(request,
-                      '/app/Social_Network/Autentication/home.html')
-    return html_codes,render(request,
-              '/app/Social_Network/Autentication/home.html')
+        #return render(request,
+         #             '/app/Social_Network/Autentication/home.html')
+    #return html_codes,render(request,
+     #         '/app/Social_Network/Autentication/home.html')
 
 
 
