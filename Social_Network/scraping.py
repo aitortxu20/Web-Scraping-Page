@@ -100,7 +100,7 @@ def amazon(element,html_codes):
 
             html_codes.append(doc)
             html_codes.append('\n')
-            return html_codes
+
     except:
         pass
 
