@@ -102,9 +102,6 @@ def amazon(element,html_codes):
 
             html_codes.append(doc)
             html_codes.append('\n')
-            if len(html_codes) > 3:
-                html_codes = []
-                html_codes.append(home_background)
 
     except:
         pass
