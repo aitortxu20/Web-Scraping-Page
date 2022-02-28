@@ -210,9 +210,9 @@ def ebay(request,element):
         title_string = 'NA'
         print('product Title = ', title_string)
         return render(request,
-                      '/app/Social_Network/Autentication/scraper.html')
+                      '/app/Social_Network/Autentication/home.html')
     return html_codes,render(request,
-              '/app/Social_Network/Autentication/scraper.html')
+              '/app/Social_Network/Autentication/home.html')
 
 
 
