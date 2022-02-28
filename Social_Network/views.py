@@ -9,18 +9,17 @@ from Social_Network.scraping import amazon , ebay
 import os
 
 def home(request):
-    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    #It returns the main page (home.html)
     return render(request, '/app/Social_Network/Autentication/home.html')
 
 def get_element(request):
-    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     if request.method == 'POST':
         element = request.POST['element']
     return element
     return render(request, '/app/Social_Network/Autentication/home.html')
 
 def sign_up(request):
-    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
     if request.method == 'POST':
         username = request.POST['username']
         fname = request.POST['fname']
@@ -44,7 +43,7 @@ def sign_up(request):
 
 
 def sign_in(request):
-    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
     if request.method == 'POST':
         username = request.POST['username']
         pass1 = request.POST['pass1']
@@ -64,13 +63,14 @@ def sign_in(request):
 
 
 def sign_out(request):
-    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
     logout(request)
     messages.success(request, 'Logged Out Succesfully!')
     return redirect('/home/')
     return render(request, '/app/Social_Network/Autentication/sign_out.html')
 
 def comparacion(request):
+
     messages.success(request,request.method)
     if request.method == 'POST':
         element = request.POST['element']

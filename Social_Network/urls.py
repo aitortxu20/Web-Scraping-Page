@@ -28,9 +28,10 @@ from django.conf.urls import url
 from django.conf import settings
 from django.conf.urls.static import static
 
-#from Social_Network.scripting import
+
 
 urlpatterns = [
+    #Different urls where each one returns a views.py function
     path('admin/', admin.site.urls),
     path('home/', home),
     path('signup', sign_up),

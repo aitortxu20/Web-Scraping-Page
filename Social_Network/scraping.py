@@ -12,7 +12,7 @@ import os
 def amazon(request,element):
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     global html_codes
-    HEADERS = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36' }
+    HEADERS = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36' } #We use headers to see that the request for Amazon has been made by an human.
     amazon_content = {}
     ebay_content = {}
     ebay_content2 = {}
@@ -41,14 +41,17 @@ def amazon(request,element):
                         background-size: cover;
                     }
                 </style>
-            </head>""",]
+            </head>""",] #This is for the background image in /try/  path
 
     #We scrap the title from Amazon.
     try:
+        #First we get the title of the element.
         title = soup.find_all('span',
                             attrs={'class': 'a-size-base-plus a-color-base a-text-normal'})
+        #Then we get the price.
         price = soup.find_all('span',
                           attrs={'class': 'a-price-whole'})
+        #Finally we get the image
         image = soup.find_all('img',
                               attrs={'class':'s-image'})
 
@@ -75,6 +78,7 @@ def amazon(request,element):
         for elemento in range(len(amazon_titles)):
             url = url + amazon_titles[elemento]
             url = url.replace(' ','')
+            #We create an html code for each Amazon Search of the element.
             doc = """ <html>
             <body>
                 <h2> AMAZON: </h2>
@@ -95,6 +99,7 @@ def amazon(request,element):
             html_codes.append(doc)
             html_codes.append('\n')
 
+        #We make a dictionary where the key is the title and the value is the price.
         dict_amazon = dict(zip(amazon_titles,amazon_prices))
 
 
@@ -109,7 +114,8 @@ def amazon(request,element):
 
 
 def ebay(request,element):
-    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+    #This function is the same we do for amazon but now for ebay.
     HEADERS = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36'}
     url = 'https://www.ebay.es/sch/i.html?_from=R40&_trksid=p2380057.m570.l1313&_nkw='+element+'&_sacat=0'
     webpage2 = requests.get(url, headers=HEADERS)
@@ -122,7 +128,7 @@ def ebay(request,element):
     contador_ebay = 0
     count_image = 0
     count_button = 0
-    # We scrap the title from Amazon.
+
     try:
         title_ebay = soup2.find_all('h3',
                                attrs={'class': 's-item__title'})
@@ -193,7 +199,7 @@ def ebay(request,element):
         return render(request,
                       '/app/Social_Network/Autentication/scraper.html')
     return dict_ebay,render(request,
-              '/app/Social_Network/Autentication/scraper.html')
+              '/app/Social_Network/Autentication/home.html')
 
 
 
