@@ -88,5 +88,7 @@ def comparacion(request):
 
 
     return HttpResponse(codes)
+    codes = []
+    html_codes = []
 
     #return render(request, '/app/Social_Network/Autentication/sign_out.html',context={'final_dict':final_dict, 'ebay_final_dict':ebay_final_dict, 'image_tag':image_tag, 'codes':codes})
