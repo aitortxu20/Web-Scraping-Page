@@ -77,7 +77,7 @@ def comparacion(request):
         #Amazon
 
         #amazon(request,element)
-        ebay(request, element)
+        #ebay(request, element)
         codes, rend = ebay(request,element)
         url_list = []
         #dic,url,image_tag,codes, rend = amazon(request,element)
