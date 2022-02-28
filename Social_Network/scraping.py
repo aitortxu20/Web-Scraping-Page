@@ -8,10 +8,21 @@ from django.contrib import messages
 import os
 
 #HEADERS = {'User-Agent':'Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0'}
+html_codes = ["""<head>
+                <meta charset="UTF-8">
+                <title>Compara Esta</title>
+                <style>
+                    body {
+                        background-image: url('https://visme.co/blog/wp-content/uploads/2017/07/50-Beautiful-and-Minimalist-Presentation-Backgrounds-036.jpg');
+                        background-repeat: no-repeat;
+                        background-attachment: fixed;
+                        background-size: cover;
+                    }
+                </style>
+            </head>""",]
 
-def amazon(element):
+def amazon(element,html_codes):
 
-    global html_codes
     HEADERS = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36 Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36 ' } #We use headers to see that the request for Amazon has been made by an human.
     amazon_content = {}
     ebay_content = {}
@@ -30,18 +41,7 @@ def amazon(element):
     buttons = []
     count_image = 0
     count_button = 0
-    html_codes = ["""<head>
-                <meta charset="UTF-8">
-                <title>Compara Esta</title>
-                <style>
-                    body {
-                        background-image: url('https://visme.co/blog/wp-content/uploads/2017/07/50-Beautiful-and-Minimalist-Presentation-Backgrounds-036.jpg');
-                        background-repeat: no-repeat;
-                        background-attachment: fixed;
-                        background-size: cover;
-                    }
-                </style>
-            </head>""",] #This is for the background image in /try/  path
+     #This is for the background image in /try/  path
 
     #We scrap the title from Amazon.
     try:
@@ -115,7 +115,7 @@ def amazon(element):
     return html_codes
 
 
-def ebay(element):
+def ebay(element, html_codes):
 
     #This function is the same we do for amazon but now for ebay.
     HEADERS = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36 Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36 '}
