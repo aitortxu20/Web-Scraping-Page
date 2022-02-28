@@ -79,7 +79,7 @@ def comparacion(request):
         #amazon(request,element)
         url_list = []
         amazon(element,html_codes)
-        #ebay(element,html_codes)
+        ebay(element,html_codes)
         #ebay(element)
         #codes = amazon(element)
         codes = html_codes
