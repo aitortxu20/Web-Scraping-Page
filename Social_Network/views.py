@@ -76,7 +76,7 @@ def comparacion(request):
     if request.method == 'POST':
         element = request.POST['element']
         #Amazon
-        #amazon(request,element)
+        amazon(request,element)
         url_list = []
         if len(html_codes) < 4:
             amazon(element,html_codes)
