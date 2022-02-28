@@ -78,23 +78,12 @@ def comparacion(request):
         amazon(request,element)
         url_list = []
         dic,url,image_tag,codes, rend = amazon(request,element)
-        '''keys = []
-        values = []
-        for k,v in dic.items():
-            keys.append(k)
-            values.append(v)
-        final_dict = dict(zip(keys,values))
+
         #Ebay
         ebay(request,element)
         dic_ebay, rende = ebay(request,element)
-        ebay_keys = []
-        ebay_values = []
-        for k, v in dic_ebay.items():
-            ebay_keys.append(k)
-            ebay_values.append(v)
 
-        ebay_final_dict = dict(zip(ebay_keys, ebay_values))'''
 
     return HttpResponse(codes)
 
-    return render(request, '/app/Social_Network/Autentication/sign_out.html',context={'final_dict':final_dict, 'ebay_final_dict':ebay_final_dict, 'image_tag':image_tag, 'codes':codes})
+    #return render(request, '/app/Social_Network/Autentication/sign_out.html',context={'final_dict':final_dict, 'ebay_final_dict':ebay_final_dict, 'image_tag':image_tag, 'codes':codes})
