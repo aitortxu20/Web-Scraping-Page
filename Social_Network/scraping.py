@@ -20,7 +20,7 @@ html_codes = ["""<head>
                         }
                     </style>
                 </head>""", ]
-if len(html_codes) == 4:
+if len(html_codes) > 3:
     html_codes = ["""<head>
                         <meta charset="UTF-8">
                         <title>Compara Esta</title>
