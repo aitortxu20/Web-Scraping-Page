@@ -85,7 +85,7 @@ def comparacion(request):
             values.append(v)
         final_dict = dict(zip(keys,values))
         #Ebay
-        ebay(request,element)
+        '''ebay(request,element)
         dic_ebay, rende = ebay(request,element)
         ebay_keys = []
         ebay_values = []
@@ -93,7 +93,7 @@ def comparacion(request):
             ebay_keys.append(k)
             ebay_values.append(v)
 
-        ebay_final_dict = dict(zip(ebay_keys, ebay_values))
+        ebay_final_dict = dict(zip(ebay_keys, ebay_values))'''
 
     return HttpResponse(codes)
 

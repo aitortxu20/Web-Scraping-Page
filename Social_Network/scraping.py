@@ -199,7 +199,7 @@ def ebay(request,element):
         return render(request,
                       '/app/Social_Network/Autentication/scraper.html')
     return dict_ebay,render(request,
-              '/app/Social_Network/Autentication/home.html')
+              '/app/Social_Network/Autentication/scraper.html')
 
 
 
