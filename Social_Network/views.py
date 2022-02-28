@@ -6,7 +6,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib import messages
 from Social_Network.scraping import amazon , ebay
-from scraping import html_codes
+from Social_Network.scraping import html_codes
 import os
 
 def home(request):
