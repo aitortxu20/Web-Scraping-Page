@@ -75,8 +75,9 @@ def comparacion(request):
     if request.method == 'POST':
         element = request.POST['element']
         #Amazon
-        ebay(request, element)
+
         amazon(request,element)
+        ebay(request, element)
         url_list = []
         dic,url,image_tag,codes, rend = amazon(request,element)
         keys = []
