@@ -8,7 +8,7 @@ from django.contrib import messages
 import os
 
 #HEADERS = {'User-Agent':'Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0'}
-html_codes = ["""<head>
+home_background = """<head>
                     <meta charset="UTF-8">
                     <title>Compara Esta</title>
                     <style>
@@ -19,20 +19,9 @@ html_codes = ["""<head>
                             background-size: cover;
                         }
                     </style>
-                </head>""", ]
-if len(html_codes) > 3:
-    html_codes = ["""<head>
-                        <meta charset="UTF-8">
-                        <title>Compara Esta</title>
-                        <style>
-                            body {
-                                background-image: url('https://visme.co/blog/wp-content/uploads/2017/07/50-Beautiful-and-Minimalist-Presentation-Backgrounds-036.jpg');
-                                background-repeat: no-repeat;
-                                background-attachment: fixed;
-                                background-size: cover;
-                            }
-                        </style>
-                    </head>""", ]
+                </head>"""
+html_codes = [home_background,]
+
 
 
 def amazon(element,html_codes):
@@ -113,6 +102,9 @@ def amazon(element,html_codes):
 
             html_codes.append(doc)
             html_codes.append('\n')
+            if len(html_codes) > 3:
+                html_codes = []
+                html_codes.append(home_background)
 
     except:
         pass
