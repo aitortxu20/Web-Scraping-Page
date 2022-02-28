@@ -79,9 +79,9 @@ def comparacion(request):
         url_list = []
         codes, rend = amazon(request,element)
 
-        '''#Ebay
+        #Ebay
         ebay(request,element)
-        dic_ebay, rende = ebay(request,element)'''
+        codes, rende = ebay(request,element)
 
 
     return HttpResponse(codes)
