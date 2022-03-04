@@ -187,6 +187,11 @@ def ebay(element):
 
 def return_value(element):
     amazon(element)
+    if len(html_codes) > 4:
+        html_codes = []
+        amazon(element)
+    else:
+        pass
     #ebay(element)
     return html_codes
 
