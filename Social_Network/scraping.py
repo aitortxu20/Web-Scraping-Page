@@ -8,6 +8,8 @@ from django.contrib import messages
 import os
 
 #HEADERS = {'User-Agent':'Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0'}
+
+
 html_codes = ["""<head>
                     <meta charset="UTF-8">
                     <title>Compara Esta</title>
@@ -19,9 +21,7 @@ html_codes = ["""<head>
                             background-size: cover;
                         }
                     </style>
-                </head>""", ]
-
-
+                </head>""",]
 
 def amazon(element):
 
