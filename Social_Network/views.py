@@ -74,10 +74,9 @@ def comparacion(request):
     messages.success(request,request.method)
     if request.method == 'POST':
         element = request.POST['element']
-        #codes = return_value(element)
-        return HttpResponse(return_value(element))
+        codes = return_value(element)
 
-
+    return HttpResponse(codes)
 
 
 
