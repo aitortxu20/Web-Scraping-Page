@@ -10,18 +10,7 @@ import os
 #HEADERS = {'User-Agent':'Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0'}
 
 
-html_codes = ["""<head>
-                    <meta charset="UTF-8">
-                    <title>Compara Esta</title>
-                    <style>
-                        body {
-                            background-image: url('https://visme.co/blog/wp-content/uploads/2017/07/50-Beautiful-and-Minimalist-Presentation-Backgrounds-036.jpg');
-                            background-repeat: no-repeat;
-                            background-attachment: fixed;
-                            background-size: cover;
-                        }
-                    </style>
-                </head>""",]
+html_codes = []
 
 def amazon(element):
 
