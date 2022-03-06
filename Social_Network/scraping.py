@@ -60,12 +60,12 @@ def amazon(element):
 
         for image_tag in image:
             count_image += 1
-            if count_image < 4:
+            if count_image < 6:
                 tags.append(image_tag['src'])
 
         for titles in title:
             contador_amazon += 1
-            if contador_amazon < 4:
+            if contador_amazon < 6:
                 amazon_titles.append(titles.text)
 
 
@@ -74,7 +74,7 @@ def amazon(element):
                 break
         for prices in price:
             contador_amazon += 1
-            if contador_amazon < 4:
+            if contador_amazon < 6:
                 amazon_prices.append(prices.text + '$')
 
         for elemento in range(len(amazon_titles)):
