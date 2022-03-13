@@ -186,7 +186,7 @@ def ebay(element):
 
 
 def return_value(element):
-    if len(html_codes) < 3:
+    if len(html_codes) < 2:
         amazon(element)
         #ebay(element)
         return html_codes
