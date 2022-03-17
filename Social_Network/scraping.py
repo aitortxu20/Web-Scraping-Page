@@ -21,6 +21,9 @@ html_codes = ["""<head>
                             background-size: cover;
                         }
                     </style>
+                    <body>
+                        <h2> If there is no results, refresh the page.</h2>
+                    </body>
                 </head>""",]
 
 def amazon(element):
