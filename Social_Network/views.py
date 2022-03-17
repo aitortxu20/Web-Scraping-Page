@@ -75,8 +75,6 @@ def comparacion(request):
     if request.method == 'POST':
         element = request.POST['element']
         codes = return_value(element)
-    else:
-        messages.success('no es un post')
 
     return HttpResponse(codes)
 
