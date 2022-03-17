@@ -186,7 +186,7 @@ def ebay(element):
 
 
 def return_value(element):
-    if len(html_codes) < 2:
+    '''if len(html_codes) < 2:
         amazon(element)
         #ebay(element)
         return html_codes
@@ -204,7 +204,21 @@ def return_value(element):
                         }
                     </style>
                 </head>""")
-        amazon(element)
-        return html_codes
+        amazon(element)'''
+    amazon(element)
+    return html_codes
+    html_codes.clear()
+    html_codes.append("""<head>
+                <meta charset="UTF-8">
+                <title>Compara Esta</title>
+                <style>
+                    body {
+                        background-image: url('https://visme.co/blog/wp-content/uploads/2017/07/50-Beautiful-and-Minimalist-Presentation-Backgrounds-036.jpg');
+                        background-repeat: no-repeat;
+                        background-attachment: fixed;
+                        background-size: cover;
+                    }
+                </style>
+            </head>""")
 
 
