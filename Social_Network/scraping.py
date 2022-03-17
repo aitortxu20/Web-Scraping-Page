@@ -203,6 +203,9 @@ def return_value(element):
                             background-size: cover;
                         }
                     </style>
+                    <body>
+                    <h2> If there is no results, refresh the page.</h2>
+                    </body>
                 </head>""")
         amazon(element)
         return html_codes
