@@ -22,7 +22,7 @@ html_codes = ["""<head>
                         }
                     </style>
                     <body>
-                        <h2> If there is no results, refresh the page.</h2>
+                        <h2> If there are no results, refresh the page.</h2>
                     </body>
                 </head>""",]
 
@@ -207,7 +207,7 @@ def return_value(element):
                         }
                     </style>
                     <body>
-                    <h2> If there is no results, refresh the page.</h2>
+                    <h2> If there are no results, refresh the page.</h2>
                     </body>
                 </head>""")
         amazon(element)
