@@ -224,6 +224,14 @@ def alibaba(element):
         # Finally we get the image
         image = soup.find_all('img',
                               attrs={'class': 'J-img-switcher-item'})
+        url_button = soup.find_all('a',
+                                   attrs={'class': 'list-no-v2-left__img-container'})
+
+        for url_buttons in url_button:
+            count_button += 1
+            if count_button < 4:
+                buttons.append(url_buttons['href'])
+
 
         for image_tag in image:
             count_image += 1
@@ -266,7 +274,7 @@ def alibaba(element):
                 </body>
                 </html>
 
-                """.format(ali_titles[elemento], ali_prices[elemento], tags[elemento], url)
+                """.format(ali_titles[elemento], ali_prices[elemento], tags[elemento], buttons[elemento])
 
             html_codes.append(doc)
             html_codes.append('\n')
@@ -298,6 +306,7 @@ def return_value(element):
                     </body>
                 </head>""")
         amazon(element)
+        alibaba(element)
         return html_codes
 
 
