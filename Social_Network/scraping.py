@@ -188,9 +188,96 @@ def ebay(element):
         pass
 
 
+def alibaba(element):
+
+    HEADERS = {
+        'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36 Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36 '}  # We use headers to see that the request for Amazon has been made by an human.
+    ali_content = {}
+    ali_content = {}
+    ali_content2 = {}
+
+    # First, we scrap in Amazon.
+    url = 'https://spanish.alibaba.com/trade/search?fsb=y&IndexArea=product_en&CatId=&SearchText=+'+element
+    webpage = requests.get(url, headers=HEADERS)
+    soup = BeautifulSoup(webpage.content, 'lxml')
+    #print(soup)
+
+    ali_prices = []
+    ali_titles = []
+    dict_ali = []
+    contador_ali = 0
+    url_list = []
+    tags = []
+    buttons = []
+    count_image = 0
+    count_button = 0
+    # This is for the background image in /try/  path
+
+    # We scrap the title from Amazon.
+    try:
+        # First we get the title of the element.
+        title = soup.find_all('h2',
+                              attrs={'class':'elements-title-normal__outter'})
+        # Then we get the price.
+        price = soup.find_all('span',
+                              attrs={'class': 'elements-offer-price-normal__promotion'})
+        # Finally we get the image
+        image = soup.find_all('img',
+                              attrs={'class': 'J-img-switcher-item'})
+
+        for image_tag in image:
+            count_image += 1
+            if count_image < 4:
+                tags.append(image_tag['src'])
+
+        for titles in title:
+            contador_ali += 1
+            if contador_ali < 4:
+                ali_titles.append(titles.text)
+                print(titles.text)
+
+
+            else:
+                contador_ali = 0
+                break
+        for prices in price:
+            contador_ali += 1
+            if contador_ali < 4:
+                ali_prices.append(prices.text + '$')
+                print(prices.text)
+
+        for elemento in range(len(ali_titles)):
+            url = url + ali_titles[elemento]
+            url = url.replace(' ', '')
+            # We create an html code for each Amazon Search of the element.
+            doc = """ <html>
+                <body>
+                    <h2> ALLI: </h2>
+                    <div class="sg-col-4-of-12 s-result-item s-asin sg-col-4-of-16 AdHolder sg-col s-widget-spacing-small sg-col-4-of-20" data-asin="B07TTJR48G" data-index="1" data-uuid="ad272963-2afb-4a53-bdd9-d4ebb0b33d9e" data-height="100px">
+
+                    <span class="a-size-base-plus a-color-base a-text-normal">
+                        {}: <h2>Precio: {}</h2>
+                        <img src={} width="150px" >
+
+                    </span>  
+                    <form action={}>
+                        <button type="submit">🔗</button>
+                    </form> 
+                </body>
+                </html>
+
+                """.format(ali_titles[elemento], ali_prices[elemento], tags[elemento], url)
+
+            html_codes.append(doc)
+            html_codes.append('\n')
+
+    except:
+        pass
+
 def return_value(element):
     if len(html_codes) < 2:
         amazon(element)
+        alibaba(element)
         #ebay(element)
         return html_codes
     else:
