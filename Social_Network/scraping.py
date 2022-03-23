@@ -60,6 +60,13 @@ def amazon(element):
         # Finally we get the image
         image = soup.find_all('img',
                               attrs={'class': 's-image'})
+        url_button = soup.find_all('a',
+                                    attrs={'class': 'a-link-normal s-underline-text s-underline-link-text s-link-style a-text-normal'})
+
+        for url_buttons in url_button:
+            count_button += 1
+            if count_button < 4:
+                buttons.append(url_buttons['href'])
 
         for image_tag in image:
             count_image += 1
@@ -81,8 +88,7 @@ def amazon(element):
                 amazon_prices.append(prices.text + '$')
 
         for elemento in range(len(amazon_titles)):
-            url = url + amazon_titles[elemento]
-            url = url.replace(' ', '')
+
             # We create an html code for each Amazon Search of the element.
             doc = """ <html>
                 <body>
@@ -100,7 +106,7 @@ def amazon(element):
                 </body>
                 </html>
 
-                """.format(amazon_titles[elemento], amazon_prices[elemento], tags[elemento], url)
+                """.format(amazon_titles[elemento], amazon_prices[elemento], tags[elemento], buttons[elemento])
 
             html_codes.append(doc)
             html_codes.append('\n')
@@ -260,7 +266,7 @@ def alibaba(element):
             # We create an html code for each Amazon Search of the element.
             doc = """ <html>
                 <body>
-                    <h2> ALLI: </h2>
+                    <h2> ALIBABA: </h2>
                     <div class="sg-col-4-of-12 s-result-item s-asin sg-col-4-of-16 AdHolder sg-col s-widget-spacing-small sg-col-4-of-20" data-asin="B07TTJR48G" data-index="1" data-uuid="ad272963-2afb-4a53-bdd9-d4ebb0b33d9e" data-height="100px">
 
                     <span class="a-size-base-plus a-color-base a-text-normal">
