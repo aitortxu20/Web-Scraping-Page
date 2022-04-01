@@ -42,40 +42,42 @@
 
 
     <!-- Input de que elemento se quiere buscar la informacion -->
-        <form action="/try/" method="post">
-            {% csrf_token %}
+    <form action="/try/" method="post">
+        {% csrf_token %}
 
-            {% for k,v in final_dict.items %}
-               <div class="sg-col-4-of-12 s-result-item s-asin sg-col-4-of-16 AdHolder sg-col s-widget-spacing-small sg-col-4-of-20" data-asin="B07TTJR48G" data-index="1" data-uuid="ad272963-2afb-4a53-bdd9-d4ebb0b33d9e">
+        {% for k,v in final_dict.items():
+           <div class="sg-col-4-of-12 s-result-item s-asin sg-col-4-of-16 AdHolder sg-col s-widget-spacing-small sg-col-4-of-20" data-asin="B07TTJR48G" data-index="1" data-uuid="ad272963-2afb-4a53-bdd9-d4ebb0b33d9e">
 
-                    <span class="a-size-base-plus a-color-base a-text-normal">
-                        {{k}} <h2> Precio: {{v}}</h2>
-                    </span>
+                <span class="a-size-base-plus a-color-base a-text-normal">
+                    {{k}} <h2> Precio: {{v}}</h2>
+                </span>
 
-            {% endfor %}
+        %}
 
 
-            {% for key,value in ebay_final_dict.items %}
-                <div class="sg-col-4-of-12 s-result-item s-asin sg-col-4-of-16 AdHolder sg-col s-widget-spacing-small sg-col-4-of-20" data-asin="B07TTJR48G" data-index="1" data-uuid="ad272963-2afb-4a53-bdd9-d4ebb0b33d9e">
+        {% for key,value in ebay_final_dict.items %}
+            <div class="sg-col-4-of-12 s-result-item s-asin sg-col-4-of-16 AdHolder sg-col s-widget-spacing-small sg-col-4-of-20" data-asin="B07TTJR48G" data-index="1" data-uuid="ad272963-2afb-4a53-bdd9-d4ebb0b33d9e">
 
-                    <span class="a-size-base-plus a-color-base a-text-normal">
-                        {{key}} <h2> Precio: {{value}}</h2>
-                    </span>
-            {% endfor %}
+                <span class="a-size-base-plus a-color-base a-text-normal">
+                    {{key}} <h2> Precio: {{value}}</h2>
+                </span>
+        {% endfor %}
 
-            </div>
-            <div style="text-align:center">
-                <font size=7 color="green">COMPARA!!!</font>
-            </div>
-            <div style="text-align:center">
-            <label for="">Search</label>
-            <input type="text" size="100px" id="element" name="element" placeholder="Write the element you want to compare" required>
-            <br>
-            <span class="a-size-base-plus a-color-base a-text-normal">
-                {{ctx}}
-            </span>
-            </div>
-        </form>
+        </div>
+        <div style="text-align:center">
+            <font size=7 color="green">COMPARA!!!</font>
+        </div>
+        <div style="text-align:center">
+        <label for="">Search</label>
+        <input type="text" size="100px" id="element" name="element" placeholder="Write the element you want to compare" required>
+        <br>
+        <span class="a-size-base-plus a-color-base a-text-normal">
+            {{ctx}}
+        </span>
+        </div>
+
+
+    </form>
 
     <div style="text-align:right">
     <button type="submit" style="width:120px; height:50px"> <a href="/signout/">SignOut</a></button>
