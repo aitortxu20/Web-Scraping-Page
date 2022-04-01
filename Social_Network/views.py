@@ -5,7 +5,7 @@ from django.template import Template, Context
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib import messages
-from Social_Network.scraping import return_value
+from Social_Network.scraping import return_value, amazon
 import os
 
 def home(request):
@@ -74,10 +74,8 @@ def comparacion(request):
     messages.success(request,request.method)
     if request.method == 'POST':
         element = request.POST['element']
-        codes = return_value(element)
-
-    return HttpResponse(codes)
-
+        #amazon(element)
+        dict_amazon,buttons,tags = amazon(element)
 
 
-    #return render(request, '/app/Social_Network/Autentication/sign_out.html',context={'final_dict':final_dict, 'ebay_final_dict':ebay_final_dict, 'image_tag':image_tag, 'codes':codes})
+    return render(request, '/app/Social_Network/Autentication/home.html',context={'final_dict':dict_amazon,'image_tag':tags, 'button':buttons})
