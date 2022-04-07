@@ -231,7 +231,7 @@ def alibaba(element):
                               attrs={'class':'elements-title-normal__outter'})
         # Then we get the price.
         price = soup.find_all('span',
-                              attrs={'class': 'elements-offer-price-normal__promotion'})
+                              attrs={'class': 'elements-offer-price-normal__price'})
         # Finally we get the image
         image = soup.find_all('img',
                               attrs={'class': 'J-img-switcher-item'})
