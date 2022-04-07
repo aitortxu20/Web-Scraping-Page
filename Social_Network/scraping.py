@@ -6,6 +6,7 @@ from django.template import Template, Context
 from django.shortcuts import render, redirect
 from django.contrib import messages
 import os
+import time
 
 #HEADERS = {'User-Agent':'Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0'}
 
@@ -293,11 +294,18 @@ def alibaba(element):
         pass
 
 def return_value(element):
-    if len(html_codes) < 1:
+    if len(html_codes) < 2:
         amazon(element)
-        alibaba(element)
-        #ebay(element)
-        return html_codes
+        if len(html_codes) == 1:
+            time.sleep(5.0)
+            alibaba(element)
+            #ebay(element)
+            return html_codes
+        else:
+            alibaba(element)
+            # ebay(element)
+            return html_codes
+
     else:
         html_codes.clear()
         html_codes.append("""<head>
