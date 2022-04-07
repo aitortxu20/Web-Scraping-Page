@@ -294,38 +294,13 @@ def alibaba(element):
         pass
 
 def return_value(element):
-    if len(html_codes) < 2:
+    while len(html_codes) < 2:
         amazon(element)
-        if len(html_codes) == 1:
-            amazon(element)
-            time.sleep(5.0)
-            alibaba(element)
-            #ebay(element)
-            return html_codes
-        else:
-            alibaba(element)
-            # ebay(element)
-            return html_codes
+    alibaba(element)
+    return html_codes
 
-    else:
-        html_codes.clear()
-        html_codes.append("""<head>
-                    <meta charset="UTF-8">
-                    <title>Compara Esta</title>
-                    <style>
-                        body {
-                            background-image: url('https://visme.co/blog/wp-content/uploads/2017/07/50-Beautiful-and-Minimalist-Presentation-Backgrounds-036.jpg');
-                            background-repeat: no-repeat;
-                            background-attachment: fixed;
-                            background-size: cover;
-                        }
-                    </style>
-                    <body>
-                    <h2> If there are no results, refresh the page.</h2>
-                    </body>
-                </head>""")
-        amazon(element)
-        alibaba(element)
-        return html_codes
+
+
+
 
 
