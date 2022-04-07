@@ -297,6 +297,7 @@ def return_value(element):
     if len(html_codes) < 2:
         amazon(element)
         if len(html_codes) == 1:
+            amazon(element)
             time.sleep(5.0)
             alibaba(element)
             #ebay(element)
