@@ -294,9 +294,12 @@ def alibaba(element):
         pass
 
 def return_value(element):
+    if len(html_codes) > 1:
+        html_codes.clear()
     while len(html_codes) < 2:
         amazon(element)
-    alibaba(element)
+    while len(html_codes) < 5:
+        alibaba(element)
     return html_codes
 
 
