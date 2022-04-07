@@ -88,10 +88,10 @@ def amazon(element):
             if contador_amazon < 6:
                 amazon_prices.append(prices.text + '$')
 
-        dict_amazon = dict(zip(amazon_titles,amazon_prices))
-        return dict_amazon,buttons, tags
+        #dict_amazon = dict(zip(amazon_titles,amazon_prices))
+        #return dict_amazon,buttons, tags
 
-        '''for elemento in range(len(amazon_titles)):
+        for elemento in range(len(amazon_titles)):
 
             # We create an html code for each Amazon Search of the element.
             doc = """ <html>
@@ -113,7 +113,7 @@ def amazon(element):
                 """.format(amazon_titles[elemento], amazon_prices[elemento], tags[elemento], buttons[elemento])
 
             html_codes.append(doc)
-            html_codes.append('\n')'''
+            html_codes.append('\n')
 
     except:
         pass

@@ -74,8 +74,9 @@ def comparacion(request):
     messages.success(request,request.method)
     if request.method == 'POST':
         element = request.POST['element']
-        #amazon(element)
-        dict_amazon,buttons,tags = amazon(element)
+        amazon(element)
+        #dict_amazon,buttons,tags = amazon(element)
+        return HttpResponse(return_value)
 
 
-    return render(request, '/app/Social_Network/Autentication/home.html',context={'final_dict':dict_amazon,'image_tag':tags, 'button':buttons})
+    #return render(request, '/app/Social_Network/Autentication/home.html',context={'final_dict':dict_amazon,'image_tag':tags, 'button':buttons})
