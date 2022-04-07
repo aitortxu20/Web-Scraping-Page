@@ -313,8 +313,7 @@ def return_value(element):
                 </head>""")
     while len(html_codes) < 2:
         amazon(element)
-    while len(html_codes) < 5:
-        alibaba(element)
+    alibaba(element)
     return html_codes
 
 
