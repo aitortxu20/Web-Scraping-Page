@@ -260,7 +260,7 @@ def alibaba(element):
             # We create an html code for each Amazon Search of the element.
             doc = """ <html>
                     <body>
-                        <h2> ALLI: </h2>
+                        <h2> ALIBABA: </h2>
                         <div class="sg-col-4-of-12 s-result-item s-asin sg-col-4-of-16 AdHolder sg-col s-widget-spacing-small sg-col-4-of-20" data-asin="B07TTJR48G" data-index="1" data-uuid="ad272963-2afb-4a53-bdd9-d4ebb0b33d9e" data-height="100px">
 
                         <span class="a-size-base-plus a-color-base a-text-normal">
@@ -303,7 +303,8 @@ def return_value(element):
                 </head>""")
     while len(html_codes) < 2:
         amazon(element)
-    alibaba(element)
+    for i in range(3):
+        alibaba(element)
     return html_codes
 
 
