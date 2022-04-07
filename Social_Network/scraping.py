@@ -228,42 +228,29 @@ def alibaba(element):
     try:
         # First we get the title of the element.
         title = soup.find_all('h2',
-                              attrs={'class':'elements-title-normal__outter'})
+                              attrs={'class':'elements-title-normal__outter'},limit=3)
         # Then we get the price.
         price = soup.find_all('span',
-                              attrs={'class': 'elements-offer-price-normal__price'})
+                              attrs={'class': 'elements-offer-price-normal__price'},limit=3)
         # Finally we get the image
         image = soup.find_all('img',
-                              attrs={'class': 'J-img-switcher-item'})
+                              attrs={'class': 'J-img-switcher-item'},limit=3)
         url_button = soup.find_all('a',
-                                   attrs={'class': 'list-no-v2-left__img-container'})
+                                   attrs={'class': 'list-no-v2-left__img-container'},limit=3)
 
         for url_buttons in url_button:
-            count_button += 1
-            if count_button < 4:
-                buttons.append(url_buttons['href'])
+            buttons.append(url_buttons['href'])
 
 
         for image_tag in image:
-            count_image += 1
-            if count_image < 4:
-                tags.append(image_tag['src'])
+            tags.append(image_tag['src'])
 
         for titles in title:
-            contador_ali += 1
-            if contador_ali < 4:
-                ali_titles.append(titles.text)
-                print(titles.text)
+            ali_titles.append(titles.text)
 
-
-            else:
-                contador_ali = 0
-                break
         for prices in price:
-            contador_ali += 1
-            if contador_ali < 4:
-                ali_prices.append(prices.text + '$')
-                print(prices.text)
+            ali_prices.append(prices.text + '$')
+
 
         for elemento in range(len(ali_titles)):
             url = url + ali_titles[elemento]
