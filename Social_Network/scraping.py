@@ -293,7 +293,7 @@ def alibaba(element):
         pass
 
 def return_value(element):
-    if len(html_codes) < 2:
+    if len(html_codes) < 1:
         amazon(element)
         alibaba(element)
         #ebay(element)
