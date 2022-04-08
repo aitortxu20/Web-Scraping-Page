@@ -38,6 +38,6 @@ urlpatterns = [
     path('signin/', sign_in),
     path('signout/', sign_out),
     path('try/', comparacion),
-    #url(r'^favicon\.ico$', RedirectView.as_view(url='/static/images/favicon.ico')),
+    url(r'^favicon\.ico$', RedirectView.as_view(url='/static/images/favicon.ico')),
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
