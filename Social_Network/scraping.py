@@ -332,7 +332,7 @@ def bangood(element):
 
 
         for image_tag in image:
-            tags.append(image_tag['src'])
+            tags.append(image_tag['data-src'])
 
         for titles in title:
             bangood_titles.append(titles.text)
