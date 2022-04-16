@@ -274,7 +274,7 @@ def alibaba(element):
                     </body>
                     </html>
 
-                    """.format(ali_titles[elemento], ali_prices[elemento], tags[elemento], url_list[elemento])
+                    """.format(ali_titles[elemento], ali_prices[elemento], tags[elemento], buttons[elemento])
 
             html_codes.append(doc)
             html_codes.append('\n')
@@ -360,7 +360,7 @@ def bangood(element):
                 </body>
                 </html>
 
-                """.format(bangood_titles[elemento], bangood_prices[elemento], tags[elemento], url_list[elemento])
+                """.format(bangood_titles[elemento], bangood_prices[elemento], tags[elemento], buttons[elemento])
 
             html_codes.append(doc)
             html_codes.append('\n')
