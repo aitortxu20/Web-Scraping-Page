@@ -331,8 +331,8 @@ def bangood(element):
             print(urles)
 
 
-        for image_tag in image:
-            tags.append(image_tag['data-src'])
+        for image_tag in title:
+            tags.append(image_tag['href'])
 
         for titles in title:
             bangood_titles.append(titles.text)
