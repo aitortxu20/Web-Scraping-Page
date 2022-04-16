@@ -283,6 +283,91 @@ def alibaba(element):
         pass
 
 
+def bangood(element):
+
+    HEADERS = {
+        'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36 Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36 '}  # We use headers to see that the request for Amazon has been made by an human.
+    bangood_content = {}
+    bangood_content = {}
+    bangood_content2 = {}
+
+    # First, we scrap in Amazon.
+    url = 'https://www.banggood.com/es/search/' + element + '.html?from=nav'
+    webpage = requests.get(url, headers=HEADERS)
+    soup = BeautifulSoup(webpage.content, 'lxml')
+    #print(soup)
+
+    bangood_prices = []
+    bangood_titles = []
+    dict_bangood = []
+    contador_bangood = 0
+    url_list = []
+    tags = []
+    buttons = []
+    count_image = 0
+    count_button = 0
+    # This is for the background image in /try/  path
+
+    # We scrap the title from Amazon.
+    try:
+        # First we get the title of the element.
+        title = soup.find_all('a',
+                              attrs={'class':'title'},limit=3)
+        # Then we get the price.
+        price = soup.find_all('span',
+                              attrs={'class': 'price notranslate'},limit=3)
+        # Finally we get the image
+        image = soup.find_all('img',
+                              attrs={'class': 'lazy'},limit=3)
+        url_button = soup.find_all('a',
+                                    attrs={'class': 'list-no-v2-left__img-container'},limit=3)
+
+        for url_buttons in url_button:
+            buttons.append(url_buttons['href'])
+            print(url_buttons['href'])
+
+        for urles in url:
+            url_list.append(urles)
+            print(urles)
+
+
+        for image_tag in image:
+            tags.append(image_tag['src'])
+
+        for titles in title:
+            bangood_titles.append(titles.text)
+
+        for prices in price:
+            bangood_prices.append(prices.text + '$')
+            print(prices.text)
+
+        for elemento in range(len(bangood_titles)):
+
+            # We create an html code for each Amazon Search of the element.
+            doc = """ <html>
+                <body>
+                    <h2> Bangood: </h2>
+                    <div class="sg-col-4-of-12 s-result-item s-asin sg-col-4-of-16 AdHolder sg-col s-widget-spacing-small sg-col-4-of-20" data-asin="B07TTJR48G" data-index="1" data-uuid="ad272963-2afb-4a53-bdd9-d4ebb0b33d9e" data-height="100px">
+
+                    <span class="a-size-base-plus a-color-base a-text-normal">
+                        {}: <h2>Precio: {}</h2>
+                        <img src={} width="150px" >
+
+                    </span>  
+                    <form action={}>
+                        <button type="submit">🔗</button>
+                    </form> 
+                </body>
+                </html>
+
+                """.format(bangood_titles[elemento], bangood_prices[elemento], tags[elemento], url_list[elemento])
+
+            html_codes.append(doc)
+            html_codes.append('\n')
+
+    except:
+        pass
+
 def return_value(element):
     if len(html_codes) > 1:
         html_codes.clear()
@@ -301,9 +386,11 @@ def return_value(element):
                         <h2> If there are no results, refresh the page.</h2>
                     </body>
                 </head>""")
+
     while len(html_codes) < 2:
         amazon(element)
     alibaba(element)
+    bangood(element)
     return html_codes
 
 
