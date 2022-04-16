@@ -322,7 +322,7 @@ def bangood(element):
         url_button = soup.find_all('a',
                                     attrs={'class': 'list-no-v2-left__img-container'},limit=3)
 
-        for url_buttons in url_button:
+        for url_buttons in title:
             buttons.append(url_buttons['href'])
             print(url_buttons['href'])
 
@@ -331,8 +331,8 @@ def bangood(element):
             print(urles)
 
 
-        for image_tag in title:
-            tags.append(image_tag['href'])
+        for image_tag in image:
+            tags.append(image_tag['src'])
 
         for titles in title:
             bangood_titles.append(titles.text)
