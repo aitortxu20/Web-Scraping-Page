@@ -23,7 +23,7 @@
     </style>
 </head>
 <body>
-
+{% if user.is_authenticated %}
 <div class="wrapper">
     {% for message in messages %}
     <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
@@ -34,7 +34,7 @@
     </div>
     {% endfor %}
 
-    {% if user.is_authenticated %}
+
     <!-- <h3> Hello!! </h3>
     <h4> You are succesfully logged in </h4>
     <h2> Welcome {{user.first_name}} </h2>-->
