@@ -62,7 +62,7 @@ def amazon(element):
         image = soup.find_all('img',
                               attrs={'class': 's-image'})
         url_button = soup.find_all('a',
-                                    attrs={'class': 'a-link-normal s-underline-text s-underline-link-text s-link-style a-text-normal'})
+                                    attrs={'class': 'a-spacing-none a-link-normal _bXVsd_link_gJc5l _bXVsd_fullSize_1_hF0 _bXVsd_hidden_L-XDK'})
 
         for url_buttons in url_button:
             count_button += 1
