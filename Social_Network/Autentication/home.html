@@ -34,7 +34,7 @@
     </div>
     {% endfor %}
 
-{% if user.is_authenticated %}
+    {% if user.is_authenticated %}
     <!-- <h3> Hello!! </h3>
     <h4> You are succesfully logged in </h4>
     <h2> Welcome {{user.first_name}} </h2>-->
@@ -67,8 +67,15 @@
             <font size=6 color="blue"> Developed By Aitortxu</font>
     </div>
 
-{% else %}
-    <h1> PERRO </h1>
+    {% else %}
+    <form method="get" action="/signin/">
+        <button type="submit">Sign In</button>
+
+    </form>
+
+    <form method="get" action="signup">
+        <button type="submit">Sign Up</button>
+    </form>
 
 </div>
 </body>
