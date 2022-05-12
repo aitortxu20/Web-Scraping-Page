@@ -54,7 +54,7 @@ def amazon(element):
     try:
         # First we get the title of the element.
         title = soup.find_all('span',
-                              attrs={'class': 'a-size-base-plus a-color-base a-text-normal'})
+                              attrs={'class': 'a-size-base-plus a-color-base a-text-nor'})
         # Then we get the price.
         price = soup.find_all('span',
                               attrs={'class': 'a-price-whole'})
